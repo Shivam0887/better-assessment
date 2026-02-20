@@ -1,0 +1,50 @@
+# Environment / Secrets
+.env
+.env.*
+!.env.example
+llm_debug.log
+
+# Python / Flask
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+**/venv/
+**/env/
+**/build/
+**/develop-eggs/
+**/dist/
+**/downloads/
+**/eggs/
+**/.eggs/
+**/lib64/
+**/parts/
+**/sdist/
+**/var/
+**/wheels/
+**/*.egg-info/
+**/.installed.cfg
+**/*.egg
+
+# Node / React
+**/node_modules/
+**/dist/
+**/dist-ssr/
+**/*.local
+**/package-lock.json
+**/pnpm-lock.yaml
+**/yarn.lock
+
+# Vercel
+.vercel
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Antigravity / Agent
+.gemini/
+**/brain/
