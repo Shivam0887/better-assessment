@@ -10,9 +10,16 @@ from pydantic import BaseModel
 logger = logging.getLogger(__name__)
 
 # ── Debug file logger ──
-_file_handler = logging.FileHandler("llm_debug.log")
-_file_handler.setLevel(logging.DEBUG)
-logger.addHandler(_file_handler)
+try:
+    # In Vercel (read-only FS), use /tmp or skip file logging
+    log_file = "/tmp/llm_debug.log" if os.environ.get("VERCEL") or not os.access(".", os.W_OK) else "llm_debug.log"
+    _file_handler = logging.FileHandler(log_file)
+    _file_handler.setLevel(logging.DEBUG)
+    logger.addHandler(_file_handler)
+except Exception:
+    # Setup basic stream handler if file logging fails
+    pass
+
 logger.setLevel(logging.DEBUG)
 
 # ── Client setup ──
