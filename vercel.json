@@ -11,6 +11,8 @@
   ],
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/index.py" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/assets/(.*)", "destination": "/frontend/assets/$1" },
+    { "source": "/vite.svg", "destination": "/frontend/vite.svg" },
+    { "source": "/(.*)", "destination": "/frontend/index.html" }
   ]
 }
